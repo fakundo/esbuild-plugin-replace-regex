@@ -1,0 +1,42 @@
+{
+  "name": "esbuild-plugin-replace-regex",
+  "version": "0.0.1",
+  "description": "Simple esbuild plugin for replacing file content while bundling",
+  "keywords": [
+    "esbuild",
+    "plugin",
+    "replace",
+    "regex"
+  ],
+  "main": "./lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "dev": "microbundle -i src -o lib -f cjs --no-sourcemap --target node --watch",
+    "compile": "microbundle -i src -o lib -f cjs --no-sourcemap --target node --compress",
+    "lint": "eslint src",
+    "clean": "rimraf lib",
+    "build": "yarn run clean && yarn run compile",
+    "prepublishOnly": "yarn run lint && yarn run build"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fakundo/esbuild-plugin-replace-regex"
+  },
+  "author": "Roman Samoylov (https://github.com/fakundo)",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "eslint": "^8.21.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "microbundle": "^0.15.0",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2"
+  }
+}
