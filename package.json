@@ -1,6 +1,6 @@
 {
   "name": "esbuild-plugin-replace-regex",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple esbuild plugin for replacing file content while bundling",
   "keywords": [
     "esbuild",
@@ -13,8 +13,8 @@
     "lib"
   ],
   "scripts": {
-    "dev": "microbundle -i src -o lib -f cjs --no-sourcemap --target node --watch",
-    "compile": "microbundle -i src -o lib -f cjs --no-sourcemap --target node --compress",
+    "dev": "microbundle -i src -o lib/index.js -f cjs --no-sourcemap --target node --watch",
+    "compile": "microbundle -i src -o lib/index.js -f cjs --no-sourcemap --target node --compress",
     "lint": "eslint src",
     "clean": "rimraf lib",
     "build": "yarn run clean && yarn run compile",
